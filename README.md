@@ -1,7 +1,7 @@
 
 <div align="center">
 <a href="https://k3d.io/#quick-start" target="_blank">
-  <img width="300" alt="k3s" src="https://k3d.io/static/img/k3d_logo_black_blue.svg" />
+  <img width="100" alt="k3s" src="https://k3d.io/static/img/k3d_logo_black_blue.svg" />
 </a><br><br>
   <h2 align="center">
      Local stack using K3D
@@ -36,6 +36,11 @@ $ kubectl apply -f ./kubernetes/
 
 # Access dashboard swagger of add products
 http://localhost:8080/api-docs/
+
+
+
+<img src="screenshots/api-swagger.png?raw=true" width="8000">
+
 
 
 ##################
