@@ -10,23 +10,21 @@
 
 ---
 
-## Getting started project
+## Simple node app (for LABS)
 
-To clone and run the application, you will need to have [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/), [k3s](https://k3d.io/#quick-start), [Helm](https://helm.sh/docs/intro/install/) installed on your machine. With all programs installed, run the following command lines:
+To clone and run the application, you will need to have:
+
+- [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+- [k3d](https://k3d.io/#quick-start)
+- [Helm (OPTIONAL)](https://helm.sh/docs/intro/install/) 
 
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/moroleandro/stack-k3d
-
-# Access the repository
-$ cd stack-k3d/app
-
 # Build image
-$ docker build -t [repository-docker-hub]/api-produto:v1.0.0
+$ docker build -t davarski/api-produto:v1.0.0
 
 # Push image
-$ docker push [repository-docker-hub]/api-produto:v1.0.0
+$ docker davarski/api-produto:v1.0.0
 
 # Create cluster using k3d
 $ k3d cluster create --servers 1 --agents 2 -p "8080:30000@loadbalancer" -p "8181:30001@loadbalancer" -p "8282:30002@loadbalancer"
@@ -34,17 +32,20 @@ $ k3d cluster create --servers 1 --agents 2 -p "8080:30000@loadbalancer" -p "818
 # Apply manifests kubernetes
 $ kubectl apply -f ./kubernetes/
 
-# Access dashboard swagger of add products
-http://localhost:8080/api-docs/
-```
+# Create ingress
+$ kubectl apply -f ingresses/api-swagger.png
 
+
+```
+## Access dashboard swagger of add products
+
+Browser: http://api.192.168.1.99.nip.io:8080
 
 <img src="screenshots/api-swagger.png?raw=true" width="8000">
 
 
-
 ##################
-### MONITORING ###
+### MONITORING (OPTIONAL) ###
 ###################
 ```
 # Add repo helm prometheus
