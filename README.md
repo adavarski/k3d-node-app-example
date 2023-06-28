@@ -36,7 +36,7 @@ $ kubectl apply -f ./kubernetes/
 
 # Access dashboard swagger of add products
 http://localhost:8080/api-docs/
-
+```
 
 
 <img src="screenshots/api-swagger.png?raw=true" width="8000">
@@ -46,7 +46,7 @@ http://localhost:8080/api-docs/
 ##################
 ### MONITORING ###
 ###################
-
+```
 # Add repo helm prometheus
 $ helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 $ helm repo update
@@ -66,7 +66,7 @@ $ helm install grafana grafana/grafana --values ./grafana/values.yaml
 
 # Dashboard grafana 
 $ localhost:8282
-
+```
 
 
 ```
